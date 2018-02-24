@@ -14,4 +14,8 @@ def longest_distance
   trails.order(:length).last
 end
 
+def shortest_distance
+  trails.order(:length).first
+end
+
 end

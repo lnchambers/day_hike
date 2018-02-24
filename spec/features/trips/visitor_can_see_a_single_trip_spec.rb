@@ -46,5 +46,11 @@ describe "As a visitor" do
 
       expect(page).to have_content("Longest Distance: 18")
     end
+
+    it "I can see the shortest hiking distance" do
+      visit trip_path(@trip)
+
+      expect(page).to have_content("Shortest Distance: 12")
+    end
   end
 end
