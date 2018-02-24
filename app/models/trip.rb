@@ -6,4 +6,8 @@ def total_distance
   trails.sum(:length)
 end
 
+def average_distance
+  trails.average(:length)
+end
+
 end

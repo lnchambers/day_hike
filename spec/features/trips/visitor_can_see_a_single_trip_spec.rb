@@ -33,6 +33,12 @@ describe "As a visitor" do
       visit trip_path(@trip)
 
       expect(page).to have_content("Total Hiking Distance: 30")
-    end 
+    end
+
+    it "I can see the planned average hiking distance" do
+      visit trip_path(@trip)
+
+      expect(page).to have_content("Average Distance: 15.0")
+    end
   end
 end
