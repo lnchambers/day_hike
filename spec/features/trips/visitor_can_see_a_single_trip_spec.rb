@@ -26,7 +26,6 @@ describe "As a visitor" do
       expect(page).to have_content(@trail.address)
       expect(page).to have_content(@trail_3.name)
       expect(page).to_not have_content(@trail_2.name)
-
     end
 
     it "I can see the planned total hiking distance" do
