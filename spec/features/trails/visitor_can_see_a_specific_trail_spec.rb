@@ -7,7 +7,8 @@ describe "As a visitor" do
     @trail_3 = Trail.create!(name: "named trail", length: 18, address: "address")
     @trip = Trip.create!(name: "A trip", start_date: Time.now, end_date: Time.now)
     @triptrail = Triptrail.create!(trip: @trip, trail: @trail, name: "A relaxing day")
-    @triptrail_2 = Triptrail.create!(trip: @trip, trail: @trail_3, name: "A terrifying proposition")
+    @triptrail_2 = Triptrail.create!(trip: @trip, trail: @trail, name: "A grueling day")
+    @triptrail_3 = Triptrail.create!(trip: @trip, trail: @trail_3, name: "A terrifying proposition")
   end
   describe "when I visit the trails show" do
     it "I can see all attributes of a trail" do
@@ -16,6 +17,12 @@ describe "As a visitor" do
       expect(page).to have_content(@trail.name)
       expect(page).to have_content(@trail.address)
       expect(page).to have_content(@trail.length)
+    end
+
+    it "I can see the total number of trips this hike has been included in" do
+      visit trail_path(@trail)
+
+      expect(page).to have_content("Total Trips: 2")
     end
   end
 end
