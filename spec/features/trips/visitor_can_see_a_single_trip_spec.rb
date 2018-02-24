@@ -8,7 +8,7 @@ describe "As a visitor" do
     it "I can click on a link to a trip show" do
       visit trips_path
 
-      click on "A trip"
+      click_on "A trip"
 
       expect(current_path).to eq(trip_path(@trip))
     end
