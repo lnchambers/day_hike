@@ -1,4 +1,7 @@
 <%= @trip.name %>
+Hikes: <% @trip.triptrails.each do |hike| %>
+  <%= hike.name %>
+<% end %>
 <% @trip.trails.each do |trail| %>
   <%= trail.name %>
   <%= trail.length %>
